@@ -7,5 +7,4 @@
 
 ## 目录(Contents)
 
-- [vue脚手架环境安装](Vuecli-settings.md)
-- [Linux]
+- [vue脚手架环境安装](Vuecli-Settings.md)
