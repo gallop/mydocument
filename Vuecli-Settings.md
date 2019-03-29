@@ -6,8 +6,8 @@
 
 >说明：安装node.js的windows版本后，会自动安装好node以及包管理工具npm，我们后续的安装将依赖npm工具。
 
--node.js下载
-  -下载地址: <https://nodejs.org/en/download/> 如下图：
+- node.js下载
+  - 下载地址: <https://nodejs.org/en/download/> 如下图：
 ![下载地址](images/vuecli-settins-01.png)
 
     根据自己电脑的具体配置，选择你要下载的安装包，作者选择的是windows 64bit。
@@ -93,3 +93,12 @@ cnpm run dev
 ```
 cnpm run build
 ```
+将dist文件夹拷贝出来，放在tomcat部署目录下即可
+
+7、如果你从GitHub上新下载了一个项目，项目中可能会缺少一个名为node_modules的文件夹，要想让它运行，必须
+- 进入项目文件下
+  - npm install
+  - npm run build
+  - npm install npm-cli
+  - npm run dev
+下次再运行的时候，只需进入项目，再npm run dev即可
