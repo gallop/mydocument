@@ -8,7 +8,8 @@
 ## 详细的配置步骤如下：
 
 ### 0. vmware 虚拟网络编辑器的配置
-打开vmware的“编辑”-->"虚拟网络编辑器"，点击“更改配置”获取管理员权限，选中“VMnet0”，如果主机是用WIFI联网的，则桥接到如下图选择：
+打开vmware的“编辑”-->"虚拟网络编辑器"，点击“更改配置”获取管理员权限，选中“VMnet0”，  
+如果主机是用WIFI联网的，则桥接到如下图选择：
 ![vmnet0-01](../images/2019/05/vmnet0-01.png)
 
 如果主机是用有线网卡联网的，则桥接到如下图选择：
@@ -31,3 +32,12 @@
 
 最后ping一下外网，截图如下：  
 ![pingbaidu](../images/2019/05/pingbaidu.png)
+
+### 3.安装必要的工具软件
+更新系统并安装必备的组件
+```
+yum upgrade or yum update
+yum install wget telnet perl perl-devel net-tools kernel-devel
+yum groupinstall "Development tools" -y
+```
+安装这些之后会大大方便今后安装其他应用是碰到的依赖包问题。其中net-tools是为了提供dig, nslookup, ipconfig等命令，方便配置CentOS 7初始化网络环境。如果不安装这个，在CentOS 7中，可以使用ip addr命令来代替ipconfig进行当前ip地址查询。
