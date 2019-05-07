@@ -1,4 +1,4 @@
-# centos 下vmware-tools安装
+# centos7系统vmware-tools安装
 
 > 安装环境说明：
 >
