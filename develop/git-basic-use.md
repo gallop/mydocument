@@ -7,10 +7,9 @@
 >    查看当前工作区已改动 但未提交到暂存区的文件列表 用 git status（只查带动的文件列表，详细改动哪些地方 用 git diff 命令）
 > 2. git diff --cached 列出本地库和暂存区还未commit到本地库的详细变化
 > 3. git commit -a 此命令将跳过git add 这步骤，直接将所有工作区的改动提交到本地库，执行完此命令，再执行git status  git diff  git diff --cached 都将返回空（无任何改变）
-> 4.  
-> 5.  
+>
 
-### 0. 查看/修改用户名和邮箱地址
+##### 0. 查看/修改用户名和邮箱地址
 
 >用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。  
 >每次commit都会用用户名和邮箱纪录。
@@ -32,7 +31,7 @@ $ git config --global user.email "email"
 ```
 > --global，代表的是全局。如果你要修改当前全局的用户名和邮箱时，需要添加这个参数
 
-### 1. git 的基本操作
+##### 1. git 的基本操作
 
 1. 在工作目录中初始化新仓库
   要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：
@@ -113,7 +112,7 @@ Changes to be committed:
         renamed:    README.txt -> README
 ```  
 
-### 2. git 和 github 的连接使用  
+## 1. git 和 github 的连接使用  
 1. 登陆github 创建SSH key
 因为本地Git仓库和GitHub仓库之间的传输是通过SSH加密传输的，GitHub需要识别是否是你推送，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送，所以需要配置ssh key。
 
@@ -155,7 +154,8 @@ Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added 'github.com,13.250.177.223' (RSA) to the list of known hosts.
 Hi gallop! You've successfully authenticated, but GitHub does not provide shell access
 ```
-### 3. 给本地仓库添加远程远程仓库
+
+## 2. 给本地仓库添加远程远程仓库
 要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用，运行 git remote add [shortname] [url]
 ```
 $ git remote add mytest https://github.com/gallop/girl.git
