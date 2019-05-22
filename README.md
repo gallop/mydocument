@@ -13,3 +13,4 @@
 - [centos7关闭防火墙和selinux](centos/firewalld-and-selinux-setting.md)
 - [redis 安装和配置](centos/redis-install.md)
 - [mariadb 安装和配置](centos/mariadb-install.md)
+- [git 的基本使用](develop/git-basic-use.md)
