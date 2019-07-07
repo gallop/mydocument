@@ -14,3 +14,6 @@
 - [redis 安装和配置](centos/redis-install.md)
 - [mariadb 安装和配置](centos/mariadb-install.md)
 - [git 的基本使用](develop/git-basic-use.md)
+- [webstrom 安装小程序开发插件](develop/webstrom-plugin-miniApp.md)
+- [centos下tomcat 指定用户启动](tomcat-start-setting.md)
+- [nginx快速安装](nginx-install.md)
