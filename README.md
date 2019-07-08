@@ -15,5 +15,6 @@
 - [mariadb 安装和配置](centos/mariadb-install.md)
 - [git 的基本使用](develop/git-basic-use.md)
 - [webstrom 安装小程序开发插件](develop/webstrom-plugin-miniApp.md)
-- [centos下tomcat 指定用户启动](tomcat-start-setting.md)
-- [nginx快速安装](nginx-install.md)
+- [centos下tomcat 指定用户启动](centos/tomcat-start-setting.md)
+- [nginx快速安装](centos/nginx-install.md)
+- [vue 项目 在nginx子目录部署](centos/vue-nginx-deploy.md)
