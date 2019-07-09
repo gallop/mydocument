@@ -1,5 +1,27 @@
 # centos 下tomcat 指定用户启动
 
+## 0、安装jdk
+  - 解压安装包：sudo tar -zxvf jdk-8u72-linux-x64.tar.gz
+  - 移到解压包到我个人习惯的安装目录下：mv jdk1.8.0_72/ /usr/
+  - 配置环境变量：
+    - 编辑配置文件：sudo vim /etc/profile
+    - 在该文件的最尾巴，添加下面内容：
+```
+# JDK
+JAVA_HOME=/usr/jdk1.8.0_72
+JRE_HOME=$JAVA_HOME/jre
+PATH=$PATH:$JAVA_HOME/bin
+CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export JAVA_HOME
+export JRE_HOME
+export PATH
+export CLASSPATH
+```
+
+- 执行命令，刷新该配置（必备操作）：source /etc/profile
+- 检查是否使用了最新的 JDK：java -version
+
+
 ## 1、新建一个用于运行tomcat的用户: utomcat
 ```
 #useradd -s /usr/sbin/nologin utomcat
@@ -73,7 +95,17 @@ PrivateTmp=true
 WantedBy=multi-user.target
 
 ```
->说明： User,Group 指的是你用哪个用户作为启动的用户
+>说明： User,Group 指的是你用哪个用户作为启动的用户  
+>注意：按上面的配置，执行 systemctl stop tomcat8 时，tomcat中运行的项目中正在运行的线程会提示退出错误。可行的方法啊如下：  
+
+1、修改tomcat/bin 下的shutdown.sh配置文件  
+- 把最尾巴这一行：exec "$PRGDIR"/"$EXECUTABLE" stop "$@"  
+- 改为：exec "$PRGDIR"/"$EXECUTABLE" stop 10 -force
+
+2、将/tomcat8.service下的ExecStop 改成：
+```
+ExecStop=/usr/local/tomcat8.5/bin/shutdown.sh
+```
 
 ## 6、设置新服务生效
 ```
