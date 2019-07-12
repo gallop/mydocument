@@ -18,3 +18,4 @@
 - [centos下tomcat 指定用户启动](centos/tomcat-start-setting.md)
 - [nginx快速安装](centos/nginx-install.md)
 - [vue 项目 在nginx子目录部署](centos/vue-nginx-deploy.md)
+- [centos7 上ffmpegµ卸载与安装](centos/ffmpeg-install.md)

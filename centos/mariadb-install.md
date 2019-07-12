@@ -250,7 +250,13 @@ mysql>create user username@localhost identified by 'password';
 ```
 mysql>grant all on *.* to username@localhost indentified by 'password';
 ```
+>语法：grant 权限 on 数据库.数据表 to '用户' @ '主机名';  
+>比如：grant all on bigears.* to ubigears@localhost;  
+> 给用户 ubigears授予本地访问数据库bigears 所有权限
+
 授予外网登陆权限
+
+
 ```
 MariaDB [(none)]> select host,user from mysql.user;
 +-----------+------+
