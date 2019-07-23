@@ -23,7 +23,7 @@ rm -rf xxx/ffmpeg
 
 ffmpeg是一个很强大的音视频处理工具，官网是：http://ffmpeg.org/ 官网介绍ffmpeg是：一个完整的、跨平台的解决方案，可以记录、转换和传输音频和视频。ffmpeg既可以播放视频，也提供命令行工具来处理视频，另外还有强大的视频处理库用于开发，下面是以Linux为例介绍ffmpeg的安装流程的简单的命令行对视频进行转码操作，是ffmpeg中最最简单的入门内容.
 
-　　首先去官网下载源码包，这里下载的是最新的ffmpeg-3.2.14.tar.bz2，下载之后上传至Linux准备安装，首先解压安装包：  
+　　首先去官网下载源码包，这里下载的是ffmpeg-3.2.14.tar.bz2，下载之后上传至Linux准备安装，首先解压安装包：  
 
 #### 2.1 安装gcc
 linux默认安装了gcc，如果你确实没有安装gcc，那么你需要安装一下gcc。  
@@ -55,6 +55,9 @@ make install
 安装yasm成功之后继续回到ffmpeg解压后的目录，执行下面命令编译并安装：  
 创建安装目录
 ```
+#解压ffmpeg
+tar -xjvf ffmpeg-3.2.14.tar.bz2
+#创建安装目录
 sudo mkdir /usr/local/ffmpeg
 
 ```
