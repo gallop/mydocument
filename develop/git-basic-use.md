@@ -205,3 +205,45 @@ To https://github.com/gallop/girl.git
    33284c9..9f41313  master -> master
 ```
 到此完成一个本地仓库添加到远程仓库的所有操作。
+
+## 3、git commit之后，想撤销commit
+
+代码如下：
+```
+git reset --soft HEAD^
+
+```
+>说明：  
+HEAD^的意思是上一个版本，也可以写成HEAD~1  
+如果你进行了2次commit，想都撤回，可以使用HEAD~2
+
+### 几个参数：
+--mixed
+意思是：不删除工作空间改动代码，撤销commit，并且撤销git add . 操作
+这个为默认参数,git reset --mixed HEAD^ 和 git reset HEAD^ 效果是一样的。
+
+
+--soft  
+不删除工作空间改动代码，撤销commit，不撤销git add .
+
+--hard
+删除工作空间改动代码，撤销commit，撤销git add .
+
+注意完成这个操作后，就恢复到了上一次的commit状态。
+
+
+### 如果commit注释写错了，只是想改一下注释，只需要：
+git commit --amend
+
+此时会进入默认vim编辑器，修改注释完毕后保存就好了。
+
+## github上删除一个文件或者删除一个文件夹下的所有文件
+
+```
+$ git pull origin master                    # 将远程仓库里面的项目拉下来
+$ dir                                                # 查看有哪些文件夹
+$ git rm -r --cached target              # 删除target文件夹
+$ git commit -m '删除了target'        # 提交,添加操作说明
+$ git push -u origin master               # 将本次更改更新到github项目上去
+
+```

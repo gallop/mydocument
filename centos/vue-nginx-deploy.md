@@ -6,7 +6,7 @@
 配置路径，使得部署vue项目能正确获取到静态资源（js，css等），在项目工程的webpack.prod.conf.js文件中，在output 添加publicPath参数，如下：
 ```
 output: {
-    publicPath: './',
+    publicPath: '/bigears/',
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash:8].js'),
     chunkFilename: utils.assetsPath('js/[name].[chunkhash:8].js')
@@ -110,3 +110,33 @@ server {
 第二、将所有以bigears开头的连接都重定向到 /bigears/index.html页面，因为vue项目工程的入口为 /bigears/index.html ,如果不配置  
 try_files $uri $uri/ /bigears/index.html last;  
 则打开vue页面后刷新会出现404错误。
+
+## 3、解决线上部署vue HTML5 History 模式，刷新页面出现空白的问题
+
+>问题描述：当vue项目以History模式线上部署是，直接按F5刷新，会出现  
+Uncaught SyntaxError: Unexpected token <错误，  
+因为浏览器是无法识别 vue-router 的路径的，解决的办法是配置historyApiFallback参数
+
+具体如下：
+在vue项目中的webpack.prod.conf.js文件，添加historyApiFallback参数，详细如下：
+```
+output: {
+    publicPath: '/bigears/',
+    path: config.build.assetsRoot,
+    filename: utils.assetsPath('js/[name].[chunkhash:8].js'),
+    chunkFilename: utils.assetsPath('js/[name].[chunkhash:8].js')
+  },
+  //HTML5 History 模式,如下配置，当浏览器刷新才能正常返回数据
+  // 注意：index的前缀需要和output下的publicPath一致，publicPath为/bigears/,
+  //则index: '/bigears/index.html'
+  devServer: {
+    historyApiFallback: {
+      index: '/bigears/index.html'
+    }
+  },
+
+```
+
+>说明：output 的publicPath必须配置项目部署的子路径，比如部署在nginx 的 bigears目录下，访问地址为http://www.mygallop.cn/bigears.则配置为/bigears/
+另外historyApiFallback中的index的前缀需要和output下的publicPath一致。  
+另外devServer 要和output同级。
