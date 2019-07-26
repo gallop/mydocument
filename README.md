@@ -19,5 +19,7 @@
 - [nginx快速安装](centos/nginx-install.md)
 - [nginx conf 配置记录](centos/bigears-nginx-config.md)
 - [vue 项目 在nginx子目录部署](centos/vue-nginx-deploy.md)
-- [centos7 上ffmpegµ卸载与安装](centos/ffmpeg-install.md)
+- [centos7 上ffmpeg卸载与安装](centos/ffmpeg-install.md)
 - [关于preflight request的知识](develop/preflight-request-about.md)
+- [ffmpeg 常用命令记录](centos/ffmpeg-command.md)
+- [java 正则式基础](develop/java-regular-base.md)
