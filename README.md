@@ -25,3 +25,6 @@
 - [java 正则式基础](develop/java-regular-base.md)
 - [springboot scheduling 定时器](develop/springboot-scheduling.md)
 - [关于mysql中 order by的使用记录](develop/mysql-orderby.md)
+- [vue cli 2.0 升级到3.0](develop/vuecli2to3.md)
+- [vue 中的ts文件是什么](develop/vue-what-is-ts.md)
+- [在小程序中使用 async await](develop/async-await-in-miniapp.md)
