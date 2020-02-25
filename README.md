@@ -28,3 +28,4 @@
 - [vue cli 2.0 升级到3.0](develop/vuecli2to3.md)
 - [vue 中的ts文件是什么](develop/vue-what-is-ts.md)
 - [在小程序中使用 async await](develop/async-await-in-miniapp.md)
+- [反编译微信小程序](develop/decompile-miniapp.md)
